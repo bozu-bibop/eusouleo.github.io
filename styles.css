@@ -1,3 +1,14 @@
+/* Estilos para dispositivos móveis */
+@media only screen and (max-width: 600px) {
+    header nav ul {
+        display: none; /* Ocultar o menu de navegação */
+    }
+    header nav ul.active {
+        display: block; /* Exibir o menu de navegação quando o menu hambúrguer é clicado */
+    }
+    /* Adicione mais estilos conforme necessário */
+}
+
 /* Reset de estilos */
 * {
     margin: 0;
