@@ -1,6 +1,14 @@
-/* Estilos para dispositivos móveis */
-@media(max-width: 1200px) {
-    width: 1080px;
+/* Estilos para dispositivos com largura máxima de 768px (tablets em modo retrato e smartphones) */
+@media(max-width: 768px) {
+    /* Seus estilos específicos para dispositivos móveis aqui */
+    .container {
+        flex-direction: column; /* Altera a direção do flex container para coluna */
+    }
+    .section1,
+    .section2 {
+        width: 100%; /* Define a largura das seções para 100% para ocupar toda a largura do dispositivo */
+    }
+    /* Adicione mais estilos conforme necessário */
 }
 
 /* Reset de estilos */
@@ -13,7 +21,7 @@
 :root {
     --gradient1: linear-gradient(45deg,#3460d8,#25d18f,#39b9af,#461673);
     --gradient2: linear-gradient(65deg, #833ab4, #fd1d1d, #fcb045, #3f5efb, #fc466b);
-    --gradientbody: linear-gradient(65deg, #FFFFFF, #F9F9F8, #F2F3F2, #ECECEB, #E5E6E4);
+    --gradient3: linear-gradient(65deg, #FFFFFF, #d1d1d1, #9b9b9b, #414141, #141414);
 }
 
 /* Estilo básico do corpo */
@@ -55,8 +63,8 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
 }
-
-.container {
+/*CONTAINER 1*/
+.container1 {
     display: flex;
     background-image: var(--gradient1);
     background-size: 500% 100%;
@@ -69,8 +77,27 @@ nav ul li a {
     border-bottom: 10px solid #d8d8d8;
 }
 
-.container:hover {
+.container1:hover {
     background-position: right;
+}
+
+/*CONTAINER 2*/
+
+.container2 {
+    display: flex;
+    background-image: var(--gradient3);
+    background-size: 500% 100%;
+    /*border: 10px double #eeeeee; se fundionar eu reativo*/
+    background-position: right;
+    transition: background-position 1.5s;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    border-bottom: 10px solid #d8d8d8;
+}
+
+.container2:hover {
+    background-position: left;
 }
 
 .section1 {
@@ -191,10 +218,10 @@ nav ul li a {
     background-position: right;
 }
 
-.section2 p,h2 {
+.section2 p,h2,a {
     text-align: justify;
     color:#191335;
-  background-image:linear-gradient(to right, #191335, #191335, #e4e4e4, #d8d8d8);
+  background-image:linear-gradient(to left, #191335, #191335, #e4e4e4, #d8d8d8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 300% 100%;
@@ -210,27 +237,27 @@ nav ul li a {
     background-position: top left 100%;
 }
 
-.slider {
-    overflow: hidden; /* Esconda o conteúdo fora da área do slider */
-    width: 100%; /* Garanta que o slider ocupe toda a largura disponível */
-    height: 200px; /* Defina a altura do slider */
-    justify-content: center; /* Centralize o conteúdo horizontalmente */
-    align-items: center; /* Centralize o conteúdo verticalmente */
+.section2:hover a {
+    background-position: top left 100%;
 }
 
-.slides {
-    display: flex; /* Use flexbox para posicionar as imagens */
-    transition: transform 0.5s ease; /* Adicione uma transição suave ao movimento do slider */
+a {
+    text-decoration: none; /* Removendo sublinhado padrão */    
+    position: relative; /* Posição relativa para que o ícone possa ser posicionado */
 }
 
-.slides img {
-    width: 100%; /* Assegure-se de que as imagens ocupem toda a largura do slider */
-    height: 200px; /* Permita que a altura das imagens seja ajustada automaticamente */
-    object-fit: cover; /* Mantenha a proporção da imagem e corte o excesso */
-    }
+a span:hover {
+    cursor: pointer; /* Mudando o cursor para mão ao passar o mouse */
+}
 
+/* Adicionando o ícone de mão apenas para a palavra "clique" */
+a span:hover::after {
+    content: "\261B"; /* Código Unicode para o ícone de mão */
+    position: absolute; /* Posição absoluta para que o ícone seja posicionado em relação ao link */
+    margin-left: 5px; /* Espaçamento entre o texto e o ícone */
+}
 
-section h2 {
+.section h2 {
     margin-bottom: 10px;
 }
 
